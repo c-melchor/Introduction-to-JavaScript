@@ -1,3 +1,6 @@
+import { Agent } from "http";
+import { timingSafeEqual } from "crypto";
+
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS ON THESE TASKS, IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
@@ -18,6 +21,11 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 18;
+
+if(votingAge >= 18){
+  console.log(true);
+}
 
 
 /*
@@ -30,6 +38,14 @@ Do the following:
 
    HINT: no function required
 */
+
+let pet = 'Cat';
+let school = 'Lambda';
+
+if(school === 'Lambda'){
+  pet = 'Dog';
+} 
+console.log(pet);
 
 
 
@@ -46,8 +62,8 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+let year = '1999';
+console.log(parseInt(year));
 
 /*
 Task 1d - Multiply
@@ -58,9 +74,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a * b;
   }
+  console.log(multiply(10,2));
 
 
 
@@ -74,9 +91,12 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+let dog = 7;
+function dogYears(human){
+ return human * dog;
 }
+console.log(dogYears(10));
+
 
 
 
@@ -107,29 +127,84 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+
+function hungryDog(weightLbs, age){
+  let ageMonths = age * 12;
+  if(weightLbs < 5){
+    return weightLbs * .05;
+  } else if(weightLbs > 6 && weightLbs <= 10){
+    return weightLbs * .04;
+  } else if(weightLbs > 10 && weightLbs <= 15){
+    return weightLbs * .03;
+  } else if(weightLbs > 15){
+    return weightLbs * .02;
+  } else if(ageMonths > 2 && ageMonths <= 4){
+    return weightLbs * .10;
+  } else if (ageMonths > 4 && ageMonths <=7){
+    return weightLbs * .05;
+  } else if (ageMonths > 7 && ageMonths < 12){
+    return weightLbs * .04;
   }
+}
+
+console.log(hungryDog(20, 3));
+
+
+   
+
+
 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
 // Rock, Paper, Scissors - Let's play against the computer!
 /*
+Create a global variable that randomly generates the computer's choice
+Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
 Use the game function below to do the following:
-  1. Receive a string that represents the user's choice (either "rock", "paper", or "scissors")
-  2. Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-  3. Return whether the user won, lost, or tied based on these rules of the game described below
-  
+  1. Receive 2 parameters the user's choice and the computer's choice
+  2. Return whether the user won, lost, or tied based on these rules of the game described below
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
-  
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-function game(/*add your code here*/){
-    /*add your code here*/
-}
+
+
+// let compChoice = Math.random();
+
+
+// function game(userChoice, compChoice){
+//   if(compChoice < .34 && userChoice === 1) {
+//     return "Tie game";
+  
+//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 1){
+//     return "You lose";
+ 
+//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 1){
+//     return "You win";
+ 
+
+//   }if(compChoice < .34 && userChoice === 2) {
+//     return "You win";
+ 
+//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 2){
+//     return "Tie game";
+   
+//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 2){
+//     return "You lose";
+   
+
+//    } if(compChoice < .34 && userChoice === 3) {
+//     return "You lose";
+   
+//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 3){
+//     return "You win";
+    
+//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 3){
+//     return "Tie game";
+//   }
+// }
+// console.log(game(2,compChoice));
   
   
 
@@ -144,10 +219,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
-
+function miles(km){
+  let miles = km * .621371;
+   return miles;
+ }
+ console.log(miles(100));
 
 
 //Task 5b - Feet to CM
@@ -158,10 +234,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(cm){
+  let feet = cm / 30.48;
+  return feet;
+}
+console.log(feet(200));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -174,9 +251,12 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(num){
+  for(num = 1; num <100; num++){
+    return `${number} bottle of soda on the wall, ${number} bottles of soda, take one down pass it around ${leftover} bottles of soda on the wall`;
   }
+  }
+  console.log(annoyingSong(100));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
