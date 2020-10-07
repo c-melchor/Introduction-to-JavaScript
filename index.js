@@ -25,6 +25,8 @@ let votingAge = 18;
 
 if(votingAge >= 18){
   console.log(true);
+} else {
+  console.log(false);
 }
 
 
@@ -307,8 +309,9 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(str) {
+  
+   
 }
 
 
