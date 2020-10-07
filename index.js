@@ -130,26 +130,24 @@ Use the hungryDog function and feeding requirements below to do the following:
 */  
 
 
-function hungryDog(weightLbs, age){
-  let ageMonths = age * 12;
-  if(weightLbs < 5){
-    return weightLbs * .05;
-  } else if(weightLbs > 6 && weightLbs <= 10){
-    return weightLbs * .04;
-  } else if(weightLbs > 10 && weightLbs <= 15){
-    return weightLbs * .03;
-  } else if(weightLbs > 15){
-    return weightLbs * .02;
-  } else if(ageMonths > 2 && ageMonths <= 4){
-    return weightLbs * .10;
-  } else if (ageMonths > 4 && ageMonths <=7){
-    return weightLbs * .05;
-  } else if (ageMonths > 7 && ageMonths < 12){
-    return weightLbs * .04;
-  }
+function hungryDog(weight, age){
+  if(age >= 1 && weight > 5 && weight <= 10){
+    return .05 * weight;
+  } else if(age >= 1 && weight > 10 && weight <= 15){
+    return .03 * weight;
+  } else if(age >= 1 && weight > 15){
+    return .02 * weight;
+  } else if(age >= .16 && age <= .33){
+    return .10 * weight;
+  } else if(age > .33 && age <= .58){
+    return .05 * weight;
+  } else if(age > .58 && age <1){
+    return .04 * weight;
+  } else {
+    return 'NOT A DOG';
 }
-
-console.log(hungryDog(20, 3));
+}
+hungryDog(15,1);
 
 
    
@@ -259,7 +257,7 @@ function annoyingSong(num){
     num = num - 1;
   }
   }
-  console.log(annoyingSong(6));
+  annoyingSong(6);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
