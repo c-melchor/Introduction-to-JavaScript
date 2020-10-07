@@ -167,32 +167,36 @@ Use the game function below to do the following:
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-const compChoice = Math.floor(Math.random() * 3);
+let compChoice = Math.floor(Math.random() * 3); //this was const before let
 // 0 = rock, 1 = paper, 2 = scissors
+if (compChoice === 0){
+  compChoice = 'rock';
+} else if(compChoice === 1){
+  compChoice = 'paper';
+} else if(compChoice === 2){
+  compChoice = 'scissors';
+}
 
 function game (userChoice, compChoice){
-     if(userChoice === 'rock' && compChoice === 0) { 
+  
+     if(userChoice === compChoice ) { 
       return "it's a tie"; 
-    } else if (userChoice === 'rock' && compChoice === 1){
+    } else if (userChoice === 'rock' && compChoice === 'paper'){
       return 'you lose!';
-    } else if(userChoice === 'rock' && compChoice === 2){
+    } else if(userChoice === 'rock' && compChoice === 'scissors'){
       return 'you win!';
-    } else if (userChoice === 'paper' && compChoice === 0){
+    } else if (userChoice === 'paper' && compChoice === 'rock'){
       return 'you win!';
-    } else if (userChoice === 'paper' && compChoice === 1){
-      return "it's a tie";
-    } else if (userChoice === 'paper' && compChoice === 2){
+    } else if (userChoice === 'paper' && compChoice === 'scissors'){
       return 'you lose!';
-    } else if(userChoice === 'scissors' && compChoice === 0){
+    } else if(userChoice === 'scissors' && compChoice === 'rock'){
       return 'you lose!';
-    } else if(userChoice === 'scissors' && compChoice === 1){
+    } else if(userChoice === 'scissors' && compChoice === 'paper'){
       return 'you win!';
-    } else if(userChoice === 'scissors' && compChoice === 2){
-      return "it's a tie";
-    }
+    } 
     }
 
-    console.log(game( 'rock', compChoice));
+    console.log(game('paper', compChoice));
 
 
 // let compChoice = Math.random();
