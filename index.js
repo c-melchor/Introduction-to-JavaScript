@@ -252,11 +252,12 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(num){
-  for(num = 1; num <100; num++){
-    return `${number} bottle of soda on the wall, ${number} bottles of soda, take one down pass it around ${leftover} bottles of soda on the wall`;
+  while(num > 0){
+    console.log(`${num} bottle of soda on the wall, ${num} bottles of soda, take one down pass it around ${num-1} bottles of soda on the wall`);
+    num = num - 1;
   }
   }
-  console.log(annoyingSong(100));
+  console.log(annoyingSong(6));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
