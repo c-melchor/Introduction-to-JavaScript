@@ -170,41 +170,41 @@ Use the game function below to do the following:
 
 
 
-// let compChoice = Math.random();
+let compChoice = Math.random();
 
 
-// function game(userChoice, compChoice){
-//   if(compChoice < .34 && userChoice === 1) {
-//     return "Tie game";
+function game(userChoice, compChoice){
+  if(compChoice < .34 && userChoice === 1) {
+    return "it's a tie";
   
-//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 1){
-//     return "You lose";
+  } else if (compChoice >= .34 && compChoice < .67 && userChoice === 1){
+    return "you lose!";
  
-//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 1){
-//     return "You win";
+  } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 1){
+    return "you win!";
  
 
-//   }if(compChoice < .34 && userChoice === 2) {
-//     return "You win";
+  }if(compChoice < .34 && userChoice === 2) {
+    return "you win!";
  
-//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 2){
-//     return "Tie game";
+  } else if (compChoice >= .34 && compChoice < .67 && userChoice === 2){
+    return "it's a tie";
    
-//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 2){
-//     return "You lose";
+  } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 2){
+    return "you lose!";
    
 
-//    } if(compChoice < .34 && userChoice === 3) {
-//     return "You lose";
+   } if(compChoice < .34 && userChoice === 3) {
+    return "you lose!";
    
-//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 3){
-//     return "You win";
+  } else if (compChoice >= .34 && compChoice < .67 && userChoice === 3){
+    return "you win!";
     
-//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 3){
-//     return "Tie game";
-//   }
-// }
-// console.log(game(2,compChoice));
+  } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 3){
+    return "it's a tie";
+  }
+}
+console.log(game(2,compChoice));
   
   
 
@@ -275,9 +275,20 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
+function grade(score){
+  if(score <= 100 && score >= 90){
+    return "you got a A";
+  } else if(score <= 89 && score >= 80){
+    return "you got a B";
+  } else if (score <= 79 && score >= 70){
+    return "you got a C";
+  } else if (score <= 69 && score >= 60){
+    return "you got a D";
+  } else if (score <= 60){
+    return "you got a F";
+  }  
   }
+  console.log(grade(60));
   
   
   
