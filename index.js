@@ -172,27 +172,27 @@ const compChoice = Math.floor(Math.random() * 3);
 
 function game (userChoice, compChoice){
      if(userChoice === 'rock' && compChoice === 0) { 
-      console.log("it's a tie");
+      return "it's a tie"; 
     } else if (userChoice === 'rock' && compChoice === 1){
-      console.log('you lose!');
+      return 'you lose!';
     } else if(userChoice === 'rock' && compChoice === 2){
-      console.log('you win!');
+      return 'you win!';
     } else if (userChoice === 'paper' && compChoice === 0){
-      console.log('you win!');
+      return 'you win!';
     } else if (userChoice === 'paper' && compChoice === 1){
-      console.log("it's a tie");
+      return "it's a tie";
     } else if (userChoice === 'paper' && compChoice === 2){
-      console.log('you lose!');
+      return 'you lose!';
     } else if(userChoice === 'scissors' && compChoice === 0){
-      console.log("you lose!");
+      return 'you lose!';
     } else if(userChoice === 'scissors' && compChoice === 1){
-      console.log("you win!");
+      return 'you win!';
     } else if(userChoice === 'scissors' && compChoice === 2){
-      console.log("it's a tie");
+      return "it's a tie";
     }
     }
 
-    console.log(game('paper', compChoice));
+    console.log(game( 'rock', compChoice));
 
 
 // let compChoice = Math.random();
@@ -276,12 +276,11 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(num){
-  while(num > 0){
-    console.log(`${num} bottle of soda on the wall, ${num} bottles of soda, take one down pass it around ${num-1} bottles of soda on the wall`);
-    num = num - 1;
+function annoyingSong(number){
+  for (let i = 0; i < number; i++){
+    return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number-1} bottles of soda on the wall`;
   }
-  }
+}
   annoyingSong(6);
 
 
