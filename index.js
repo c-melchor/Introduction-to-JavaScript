@@ -167,44 +167,69 @@ Use the game function below to do the following:
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
+const compChoice = Math.floor(Math.random() * 3);
+// 0 = rock, 1 = paper, 2 = scissors
+
+function game (userChoice, compChoice){
+     if(userChoice === 'rock' && compChoice === 0) { 
+      console.log("it's a tie");
+    } else if (userChoice === 'rock' && compChoice === 1){
+      console.log('you lose!');
+    } else if(userChoice === 'rock' && compChoice === 2){
+      console.log('you win!');
+    } else if (userChoice === 'paper' && compChoice === 0){
+      console.log('you win!');
+    } else if (userChoice === 'paper' && compChoice === 1){
+      console.log("it's a tie");
+    } else if (userChoice === 'paper' && compChoice === 2){
+      console.log('you lose!');
+    } else if(userChoice === 'scissors' && compChoice === 0){
+      console.log("you lose!");
+    } else if(userChoice === 'scissors' && compChoice === 1){
+      console.log("you win!");
+    } else if(userChoice === 'scissors' && compChoice === 2){
+      console.log("it's a tie");
+    }
+    }
+
+    console.log(game('paper', compChoice));
 
 
+// let compChoice = Math.random();
 
-let compChoice = Math.random();
 
-
-function game(userChoice, compChoice){
-  if(compChoice < .34 && userChoice === 1) {
-    return "it's a tie";
+// function game(userChoice, compChoice){
+//   if(compChoice < .34 && userChoice === 1) {
+//     return "it's a tie";
   
-  } else if (compChoice >= .34 && compChoice < .67 && userChoice === 1){
-    return "you lose!";
+//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 1){
+//     return "you lose!";
  
-  } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 1){
-    return "you win!";
+//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 1){
+//     return "you win!";
  
 
-  }if(compChoice < .34 && userChoice === 2) {
-    return "you win!";
+//   }if(compChoice < .34 && userChoice === 2) {
+//     return "you win!";
  
-  } else if (compChoice >= .34 && compChoice < .67 && userChoice === 2){
-    return "it's a tie";
+//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 2){
+//     return "it's a tie";
    
-  } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 2){
-    return "you lose!";
+//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 2){
+//     return "you lose!";
    
 
-   } if(compChoice < .34 && userChoice === 3) {
-    return "you lose!";
+//    } if(compChoice < .34 && userChoice === 3) {
+//     return "you lose!";
    
-  } else if (compChoice >= .34 && compChoice < .67 && userChoice === 3){
-    return "you win!";
+//   } else if (compChoice >= .34 && compChoice < .67 && userChoice === 3){
+//     return "you win!";
     
-  } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 3){
-    return "it's a tie";
-  }
-}
-console.log(game(2,compChoice));
+//   } else if (compChoice >= .67 && compChoice < 1.01 && userChoice === 3){
+//     return "it's a tie";
+//   }
+// }
+// console.log(game(2,compChoice));
   
   
 
